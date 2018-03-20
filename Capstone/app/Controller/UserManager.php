@@ -1,0 +1,36 @@
+<?php
+namespace app\Controller;
+
+use app\Models\entity\User;
+use app\Models\data\UserManagerDB;
+
+class UserManager
+{
+    public static function getAllUsers(){
+        return UserManagerDB::getAllUsers();
+    }
+    public function getUserByEmailPassword($email,$password){
+        return UserManagerDB::getUserByEmailPassword($email,$password);
+    }
+    public function getUserByEmail($email){
+        return UserManagerDB::getUserByEmail($email);
+    }
+    public function saveUser(User $user){
+        UserManagerDB::saveUser($user);
+	}	
+	public function updateUser(User $user){
+        UserManagerDB::updateUser($user);
+	}	
+	public function getUserBySearch($searchvalue){
+		return UserManagerDB::getUserBySearch($searchvalue);
+	}	
+	public function deleteUser($email){
+		return UserManagerDB::deleteUser($email);
+    }
+	
+	public function saveThread(Thread $threadid){
+		UserManagerDB::saveThread($threadid);
+    }	
+    
+}
+?>
